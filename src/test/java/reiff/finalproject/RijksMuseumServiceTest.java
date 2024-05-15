@@ -1,4 +1,5 @@
-package reiff.finalProject;
+package reiff.finalproject;
+
 import com.andrewoid.ApiKey;
 
 import org.junit.jupiter.api.Test;
@@ -9,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class RijksMuseumServiceTest {
 
     @Test
-    public void artObjects(){
+    public void artObjects() {
 
         //given
         ApiKey key = new ApiKey();
@@ -32,7 +33,7 @@ class RijksMuseumServiceTest {
     }
 
     @Test
-    public void artObjectsSearch(){
+    public void artObjectsSearch() {
 
         //given
         ApiKey key = new ApiKey();
@@ -52,7 +53,7 @@ class RijksMuseumServiceTest {
     }
 
     @Test
-    public void artObjectsArtist(){
+    public void artObjectsArtist() {
 
         //given
         ApiKey key = new ApiKey();

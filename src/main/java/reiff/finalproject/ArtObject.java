@@ -1,8 +1,8 @@
-package reiff.finalProject;
+package reiff.finalproject;
 
 public class ArtObject {
     public String title;
     public String longTitle;
-    public  webImage webImage;
+    public WebImage webImage;
     public String principalOrFirstMaker;
 }

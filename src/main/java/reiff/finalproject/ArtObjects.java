@@ -1,4 +1,4 @@
-package reiff.finalProject;
+package reiff.finalproject;
 
 public class ArtObjects {
     public ArtObject[] artObjects;

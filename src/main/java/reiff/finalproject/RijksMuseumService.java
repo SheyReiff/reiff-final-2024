@@ -1,4 +1,5 @@
-package reiff.finalProject; //it did not let me name my package reiff.final
+package reiff.finalproject; //it did not let me name my package reiff.final
+
 import io.reactivex.rxjava3.core.Single;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

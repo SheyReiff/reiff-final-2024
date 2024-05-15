@@ -1,6 +1,6 @@
-package reiff.finalProject;
+package reiff.finalproject;
 
-public class webImage {
+public class WebImage {
     public String guide;
     public int offsetPercentageX;
     public int offsetPercentageY;
