@@ -85,9 +85,7 @@ public class RijksSearchFrame extends JFrame {
                     URL imageUrl = new URL(artObject.webImage.url);
                     Image originalImage = ImageIO.read(imageUrl);
 
-
-                    int imageWidth = 200;
-                    Image scaledImage = originalImage.getScaledInstance(imageWidth, -1, Image.SCALE_DEFAULT);
+                    Image scaledImage = originalImage.getScaledInstance(200, -1, Image.SCALE_DEFAULT);
                     JLabel label = getjLabel(artObject, scaledImage);
 
                     resultsPanel.add(label);

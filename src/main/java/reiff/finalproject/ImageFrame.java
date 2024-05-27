@@ -1,5 +1,6 @@
 package reiff.finalproject;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
@@ -12,18 +13,16 @@ public class ImageFrame extends JFrame {
         setLayout(new BorderLayout());
 
         try {
-            ImageIcon imageIcon = new ImageIcon(new URL(imageUrl));
-            Image image = imageIcon.getImage();
-            int width = image.getWidth(null);
+            URL url = new URL(imageUrl);
+            Image image = ImageIO.read(url);
 
-            if (width > 800) {
-                image = image.getScaledInstance(800, -1, Image.SCALE_SMOOTH);
-                imageIcon = new ImageIcon(image);
-            }
+            Image scaledImage = image.getScaledInstance(800, -1, Image.SCALE_SMOOTH);
+            ImageIcon imageIcon = new ImageIcon(scaledImage);
 
-            JLabel imageLabel = new JLabel(imageIcon);
+            JLabel label = new JLabel();
+            label.setIcon(imageIcon);
 
-            JScrollPane scrollPane = new JScrollPane(imageLabel);
+            JScrollPane scrollPane = new JScrollPane(label);
             add(scrollPane, BorderLayout.CENTER);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error loading image: " + e.getMessage());
