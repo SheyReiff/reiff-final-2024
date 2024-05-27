@@ -15,11 +15,9 @@ public class ImageFrame extends JFrame {
             ImageIcon imageIcon = new ImageIcon(new URL(imageUrl));
             Image image = imageIcon.getImage();
             int width = image.getWidth(null);
-            int height = image.getHeight(null);
 
             if (width > 800) {
-                int newHeight = (int) ((800.0 / width) * height);
-                image = image.getScaledInstance(800, newHeight, Image.SCALE_SMOOTH);
+                image = image.getScaledInstance(800, -1, Image.SCALE_SMOOTH);
                 imageIcon = new ImageIcon(image);
             }
 
