@@ -7,7 +7,6 @@ import java.awt.event.MouseEvent;
 import java.net.URL;
 
 import java.io.IOException;
-import java.io.InputStream;
 import javax.imageio.ImageIO;
 
 import com.andrewoid.ApiKey;
@@ -18,6 +17,7 @@ public class RijksSearchFrame extends JFrame {
     private final JPanel resultsPanel;
     private int currentPage = 1;
     private final RijksMuseumService service;
+    private final ApiKey key;
 
     public RijksSearchFrame() {
         setTitle("Rijksmuseum Art Search");
@@ -46,6 +46,7 @@ public class RijksSearchFrame extends JFrame {
         add(resultsPanel, BorderLayout.CENTER);
 
         service = new RijksMuseumServiceFactory().getService();
+        key = new ApiKey();
 
         prevButton.addActionListener(e -> {
             if (currentPage > 1) {
@@ -72,7 +73,6 @@ public class RijksSearchFrame extends JFrame {
         String query = searchField.getText();
 
         Single<ArtObjects> call;
-        ApiKey key = new ApiKey();
         if (query.isEmpty()) {
             call = service.artObjectsPageNumber(key.get(), currentPage);
         } else {
