@@ -31,11 +31,13 @@ public class RijksSearchFrame extends JFrame {
         JPanel searchPanel = new JPanel();
         searchPanel.setLayout(new BorderLayout());
         searchField = new JTextField();
+        JButton searchButton = new JButton("Search");
         JButton prevButton = new JButton("Previous Page");
         JButton nextButton = new JButton("Next Page");
         searchPanel.add(prevButton, BorderLayout.WEST);
         searchPanel.add(searchField, BorderLayout.CENTER);
         searchPanel.add(nextButton, BorderLayout.EAST);
+        searchPanel.add(searchButton, BorderLayout.SOUTH);
 
         topPanel.add(searchPanel, BorderLayout.NORTH);
 
@@ -47,6 +49,11 @@ public class RijksSearchFrame extends JFrame {
 
         service = new RijksMuseumServiceFactory().getService();
         key = new ApiKey();
+
+        searchButton.addActionListener(e -> {
+            currentPage = 1;
+            fetchAndDisplayResults();
+        });
 
         prevButton.addActionListener(e -> {
             if (currentPage > 1) {
