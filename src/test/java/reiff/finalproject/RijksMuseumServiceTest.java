@@ -70,7 +70,6 @@ class RijksMuseumServiceTest {
         ArtObject artObjects = objects.artObjects[0];
         assertEquals("Wenzel Jamnitzer", artObjects.principalOrFirstMaker);
 
-
     }
 
 }
